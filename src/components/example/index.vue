@@ -10,7 +10,7 @@
     <slot></slot>
     <!-- 代码显示 -->
     <div class="btn-showCode"
-      @click="isShowCode=!isShowCode">{{isShowCode?`隐藏代码`:`显示代码`}}</div>
+      @click="isShowCode=!isShowCode">{{isShowCode?`隐藏源码`:`查看源码`}}</div>
     <div class="code-wrap"
       v-show="isShowCode">
       <div class="tips"
