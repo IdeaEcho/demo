@@ -1,0 +1,63 @@
+@function re($px) {
+  @return $px/20/2+rem;
+}
+@function rem($px) {
+  @return $px/20/2+rem;
+}
+
+$base: "../../images/";
+@mixin bg($url) {
+  background-image: url(#{$base+$url});
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+@mixin wh($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin whr($width, $height) {
+  width: re($width);
+  height: re($height);
+}
+
+@mixin placeHold($w, $h) {
+  background-image: url(#{'http://placehold.it/'+$w+'x'+$h});
+}
+
+@mixin boxBg() {
+  position: relative;
+  min-height: re(200);
+  @include bg('box.png');
+  background-size: 100% 95%;
+  background-position: center;
+  z-index: 1;
+  width: re(586);
+  margin: 0 auto;
+  &::before {
+    content: ' ';
+    position: absolute;
+    @include bg('box.png');
+    background-position: center top;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    width: 100%;
+    height: re(50);
+    background-position: top center;
+    background-size: 100% auto;
+  }
+  &::after {
+    content: ' ';
+    position: absolute;
+    @include bg('box.png');
+    width: 100%;
+    height: re(30);
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    background-position: center bottom;
+    background-size: 100% auto;
+  }
+}

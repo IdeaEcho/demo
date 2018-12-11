@@ -1,0 +1,10 @@
+{
+  "name": "huodongUI",
+  "version": "1.0.8",
+  "description": "huodong-ui",
+  "scripts": {},
+  "main": "./dest.js",
+  "author": "gaofanni",
+  "license": "ISC",
+  "private": false
+}

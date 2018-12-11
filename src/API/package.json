@@ -1,0 +1,12 @@
+{
+  "name": "API",
+  "version": "1.0.2",
+  "description": "活动API",
+  "scripts": {},
+  "main": "./dest.js",
+  "author": "fupengcheng",
+  "license": "ISC",
+  "types": "./index.d.ts",
+  "typings": "./index.d.ts",
+  "private": false
+}

@@ -1,0 +1,107 @@
+html,
+body {
+    text-align: center;
+}
+.root {
+    width: 100%;
+    height: 100%;
+}
+header {
+    width: 100%;
+    color: #333;
+    text-align: center;
+    font-size: re(16);
+    text-align: right;
+    height: re(40);
+    line-height: re(40);
+    color: #323232;
+    padding: re(0) re(80);
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background: white;
+    box-shadow: 0 0 1px rgba(0,0,0,0.25);
+    a{
+        padding:0 re(20);
+        color: #999;
+        position: relative;
+        cursor: pointer;
+        &::before{
+            content:'';
+            vertical-align: middle;
+            width:re(1);
+            height:60%;
+            background:#999;
+            position: absolute;
+            left:0;
+            top:50%;
+            transform: translateY(-50%)
+        }
+        &.router-link-exact-active {
+            color: #323232;
+            font-weight: 500;
+        }
+    }
+    @media screen and (max-width:1180px) {
+        .nav{
+            background-image: url('https://cn.vuejs.org/images/menu.png');
+            width:re(40);
+            height:re(40);
+            position: absolute;
+            left:re(10);
+            top:50%;
+            transform: translateY(-50%);
+            background-size: 84% 84%;
+            background-position: center center;
+            vertical-align: middle;
+
+        }
+    }
+}
+.main {
+    padding-top: re(40);
+}
+aside {
+    color: #333;
+    text-align: center;
+    width: re(200);
+    height: 100%;
+    vertical-align: top;
+    position: fixed;
+    left: 0;
+    top: re(41);
+    background:white;
+    z-index: 100;
+    @media screen and (max-width: 1180px){
+        background:#fefefe;
+        box-shadow: re(4) re(4) re(10) rgba(0,0,0,0.1);
+        transition:all 0.3s;
+        &.show{
+            left:0;
+            opacity: 1
+        }
+        &.hide{
+            left:re(-200);
+            opacity: 0;
+        }
+    }
+    a {
+        display: block;
+        width: 100%;
+        height: re(40);
+        line-height: re(40);
+        text-align: left;
+        padding-left: re(20);
+        color: #999;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        font-size: re(14);
+        &.router-link-exact-active {
+            color: #323232;
+            font-weight: 400;
+        }
+    }
+}
