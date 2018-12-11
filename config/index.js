@@ -2,7 +2,7 @@
 var path = require('path')
 var glob = require('glob')
 var version = 2;
-var title = 'huodongUI'; //请配置活动的标题
+var title = 'demo'; //请配置活动的标题
 
 function getEntry(globPath) {
     var entries = {},
