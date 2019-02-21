@@ -9,7 +9,7 @@
 		 :interval="3"
 		 @callback="overHandle()"
 		></circleCountDown>
-
+		<button type="button" name="button" @click="timeStatus=!timeStatus">{{timeStatus?'暂停':'开始'}}</button>
 	</Example>
 </div>
 </template>
