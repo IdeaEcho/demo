@@ -2,14 +2,14 @@
 <template>
 <div class="timer-bar">
 	<div :class="['bar--circle',
-  {'restart':status},
-  {'pause':pause}]">
+  {'start':status},
+  {'paused':paused}]">
 		<div class="circle"></div>
 		<div class="left">
-			<div class="circle_left"></div>
+			<div class="circle__left"></div>
 		</div>
 		<div class="right">
-			<div class="circle_right"></div>
+			<div class="circle__right"></div>
 		</div>
 		<div ref="bar" class="num">{{gameData.time}}</div>
 	</div>
@@ -37,13 +37,12 @@ export default {
 			default: false
 		},
 		paused: {
-			required: true,
+			required: false,
 			default: false
 		}
 	},
 	data() {
 		return {
-			pause: false,
 			usedtime: 0,
 			gameData: {
 				time: this.interval
@@ -52,20 +51,19 @@ export default {
 	},
 	created() {},
 	mounted() {
-		// this.timing()
 	},
 	computed: {},
 	watch: {
 		status: function(val) {
-			this.pause = false
+			this.paused = false
 			this.gameData.time = this.interval
 			clearInterval(window.scrollTimer)
 			window.scrollTimer = null;
 			clearInterval(window.scoreTimer)
 			window.scoreTimer = null;
-      if(val) {
-        // this.timing()
-      }
+			if (val) {
+				this.timing()
+			}
 		}
 	},
 	methods: {
@@ -76,9 +74,8 @@ export default {
 			//游戏秒数计时
 			window.scrollTimer = window.setInterval(() => {
 				that.gameData.time -= 1
-				// console.log(that.gameData.time);
 				if (that.gameData.time == 0) {
-					that.pause= true
+					// that.paused = true
 					clearInterval(window.scrollTimer)
 					window.scrollTimer = null;
 					clearInterval(window.scoreTimer)
@@ -104,7 +101,7 @@ export default {
     position: relative;
 }
 .bar--circle {
-    // position: relative;
+    position: relative;
     height: 200px;
     width: 200px;
     border-radius: 100%;
@@ -121,7 +118,7 @@ export default {
         height: 200px;
         width: 200px;
         border: 12px solid #000;
-        border-radius: 100%;
+        border-radius: 50%;
     }
     .right {
         position: absolute;
@@ -130,19 +127,17 @@ export default {
         width: 100px;
         height: 200px;
         overflow: hidden;
-        .circle_right {
+        .circle__right {
             position: absolute;
             top: 0;
             right: 0;
             height: 200px;
             width: 200px;
             border: 12px solid transparent;
-            border-radius: 100%;
             border-top: 12px solid #bfd1ff;
             border-right: 12px solid #bfd1ff;
+						border-radius: 50%;
             transform: rotate(-135deg);
-            background-clip: padding-box;
-            overflow: hidden;
         }
     }
     .left {
@@ -152,40 +147,36 @@ export default {
         width: 100px;
         height: 200px;
         overflow: hidden;
-        .circle_left {
+        .circle__left {
             position: absolute;
             top: 0;
             left: 0;
             height: 200px;
             width: 200px;
             border: 12px solid transparent;
-            border-radius: 100%;
-            border-bottom: 12px solid #bfd1ff;
             border-left: 12px solid #bfd1ff;
+            border-bottom: 12px solid #bfd1ff;
+            border-radius: 50%;
             transform: rotate(-135deg);
         }
     }
-    &.restart {
-        .circle_right {
-            animation: circle_right 3s linear infinite;
+    &.start {
+        .circle__right {
+            animation: circle__right 3s linear infinite;
         }
-        .circle_left {
-            animation: circle_left 3s linear infinite;
+        .circle__left {
+            animation: circle__left 3s linear infinite;
         }
     }
-    &.pause {
-        .circle_left,
-        .circle_right {
+    &.paused {
+        .circle__left,
+        .circle__right {
             animation-play-state: paused;
         }
     }
 }
 
-
-@keyframes circle_right {
-    0% {
-        transform: rotate(-135deg);
-    }
+@keyframes circle__right {
     50% {
         transform: rotate(45deg);
     }
@@ -193,7 +184,7 @@ export default {
         transform: rotate(45deg);
     }
 }
-@keyframes circle_left {
+@keyframes circle__left {
     50% {
         transform: rotate(-135deg);
     }

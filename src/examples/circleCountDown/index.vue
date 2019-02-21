@@ -26,7 +26,11 @@ export default {
 					author: "chenshuyao",
 					tip: "圆型倒计时"
 				},
-				code: ``,
+				code: `<circleCountDown
+				 :status="timeStatus"
+				 :interval="3"
+				 @callback="overHandle()"
+				></circleCountDown>`,
 				tableInfo: {
 					attributes: [{
 						propName: "status",
@@ -39,6 +43,12 @@ export default {
 						explain: `倒计时周期`,
 						type: `Number`,
 						default: `3`,
+						required: "false"
+					}, {
+						propName: "paused",
+						explain: `暂停`,
+						type: `Boolean`,
+						default: `false`,
 						required: "false"
 					}],
 					events: [{
@@ -55,7 +65,7 @@ export default {
 	methods: {
 		overHandle(payload) {
 			console.log(payload);
-		}
+		},
 	},
 	components: {
 		circleCountDown,
