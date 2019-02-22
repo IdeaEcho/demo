@@ -63,9 +63,7 @@ export default {
 					.data("id", item)
 					.data("dark", fill)
 					.data("people", people)
-					.click(function(e) {
-
-					});
+					.click(function(e) {});
 			})
 			this.refreshShine(map)
 		},

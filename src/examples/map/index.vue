@@ -4,9 +4,7 @@
     :info="exampleInfo.info"
     :code="exampleInfo.code"
     :tableInfo='exampleInfo.tableInfo'>
-		<mapBox>
-		</mapBox>
-
+		<mapBox></mapBox>
 	</Example>
 </div>
 </template>
@@ -21,20 +19,16 @@ export default {
 				info: {
 					title: "地图",
 					author: "chenshuyao",
-					tip: "地图"
+					tip: "用svg写的地图，svg数据在map.json文件里，json在手，什么样式的地图都可以通用"
 				},
 				code: ``,
 				tableInfo: {
         }
 			},
-			lotteryTimes: 3,
 		};
 	},
 	methods: {
-		handleLotteryResult(payload) {
-			console.log(payload);
-			this.lotteryTimes-=1
-		}
+
 	},
 	components: {
 		mapBox,
