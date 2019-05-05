@@ -4,7 +4,6 @@
   "description": "huodong-ui",
   "scripts": {},
   "main": "./dest.js",
-  "author": "gaofanni",
   "license": "ISC",
   "private": false
 }

@@ -7,8 +7,8 @@ class Env {
         this.ua = navigator.userAgent;
         this.isAndroid = (/android/gi).test(this.ua);
         this.isIos = this.ua.match(/(iPad|iPhone|iPod)[^;]*;.+OS\s([\d_\.]+)/);
-        this.isGameBox = /4399GameCenter/gi.test(this.ua);
-        this.isYouPai = /4399YouPai/gi.test(this.ua);
+        this.isGameBox = /GameCenter/gi.test(this.ua);
+        this.isYouPai = /YouPai/gi.test(this.ua);
         this.isIosGameBox = this.isIos && this.isGameBox;
         this.isAndroidGameBox = this.isAndroid && this.isGameBox;
         this.isIosYoupai = this.isIos && this.isYouPai;
