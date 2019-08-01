@@ -12,17 +12,23 @@ exports.assetsPath = function(_path) {
 exports.cssLoaders = function(options) {
     options = options || {}
 
-    var cssLoader = {
+    const cssLoader = {
         loader: 'css-loader',
         options: {
-            minimize: process.env.NODE_ENV === 'production',
             sourceMap: options.sourceMap
         }
     }
 
+    const postcssLoader = {
+      loader: 'postcss-loader',
+      options: {
+        sourceMap: options.sourceMap
+      }
+    }
+
     // generate loader string to be used with extract text plugin
     function generateLoaders(loader, loaderOptions) {
-        var loaders = [cssLoader]
+        const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader]
         if (loader) {
             loaders.push({
                 loader: loader + '-loader',
