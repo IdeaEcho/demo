@@ -13,7 +13,7 @@ examples.keys().forEach(r => {
     let key = /\.\/([\s\S]*)\/[\s\S]*.vue/.exec(r)[1];
     routes.push({
         path: `/${key}`,
-        component: examples(r),
+        component: examples(r).default,
         name: key
     })
 })
