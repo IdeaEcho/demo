@@ -25,7 +25,7 @@ for (var i in entries) {
         filename: 'view/' + i + '.html',
         template: './src/template.ejs',
         inject: true,
-        chunks: ["" + i, 'vendor', 'manifest'],
+        chunks: ["" + i, 'runtime'],
         title: title,
         chunksSortMode: 'dependency'
     });

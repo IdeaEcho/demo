@@ -1,41 +1,42 @@
 <template>
-<div class="lotteryCard">
+<div>
 	<Example
     :info="exampleInfo.info"
     :code="exampleInfo.code"
     :tableInfo='exampleInfo.tableInfo'>
-		<mapBox></mapBox>
+		<IndexedDB></IndexedDB>
 	</Example>
 </div>
 </template>
 
 <script>
-import mapBox from "../../packages/map/index";
+import IndexedDB from "../../packages/IndexedDB/index";
 import Example from "../../components/example/index";
 export default {
 	data() {
 		return {
 			exampleInfo: {
 				info: {
-					title: "地图",
+					title: "IndexedDB",
 					author: "chenshuyao",
-					tip: "用svg写的地图，svg数据在map.json文件里，json在手，什么样式的地图都可以通用"
+					tip: "IndexedDB的demo，未整理成组件"
 				},
-				code: ``,
+				code: `<IndexedDB></IndexedDB>`,
 				tableInfo: {
+					slot: []
         }
 			},
 		};
 	},
 	methods: {
-
 	},
 	components: {
-		mapBox,
+		IndexedDB,
 		Example
 	}
 };
 </script>
 
 <style lang="scss">
-@import "../../common/sass/global";</style>
+@import "../../common/sass/global";
+</style>
