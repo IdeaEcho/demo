@@ -60,15 +60,6 @@ module.exports = {
         autoOpenBrowser: true,
         assetsSubDirectory: './static',
         assetsPublicPath: '/',
-        proxyTable: {
-            '/redirect/': {
-                target: 'http://mobi.4399tech.com',
-                pathRewrite: {
-                    '^/redirect/': '/redirect/'
-                },
-                changeOrigin: true
-            }
-        },
         // CSS Sourcemaps off by default because relative paths are "buggy"
         // with this option, according to the CSS-Loader README
         // (https://github.com/webpack/css-loader#sourcemaps)

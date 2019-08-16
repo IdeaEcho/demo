@@ -9,7 +9,9 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 var MiniCssExtractPlugin = require('mini-css-extract-plugin')
 var InlineManifestWebpackPlugin = require('inline-manifest-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {
+  CleanWebpackPlugin
+} = require('clean-webpack-plugin');
 
 var env = config.build.env
 

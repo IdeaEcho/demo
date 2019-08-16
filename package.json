@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "vue-demo",
   "private": false,
+  "author": "ChenShuyao<6044407@qq.com>",
   "license": "ISC",
   "repository": {
     "type": "git",
