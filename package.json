@@ -47,7 +47,7 @@
     "http-proxy-middleware": "^0.19.1",
     "js-base64": "^2.1.9",
     "jsonp": "^0.2.1",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "opn": "^4.0.2",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "ora": "^1.1.0",
